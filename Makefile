@@ -6,7 +6,7 @@
 #    By: annavm <annavm@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 21:47:07 by annavm            #+#    #+#              #
-#    Updated: 2024/12/12 12:41:58 by annavm           ###   ########.fr        #
+#    Updated: 2024/12/12 21:33:07 by annavm           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,10 +69,12 @@ MLX         = $(MLX_DIR)/libmlx.a
 INCLUDES    = -I $(INC_DIR) -I $(LIBFT_DIR) -I $(MLX_DIR)
 
 # MLX Flags
-MLX_FLAGS   = -L$(MLX_DIR) -lmlx -lXext -lX11 -lz
+MLX_FLAGS = -L$(MLX_DIR) -lmlx -lXext -lX11
+LDFLAGS += -L/usr/lib/x86_64-linux-gnu -lX11 -lXpm -lXext
 
 # Math Flags
 MATH_FLAGS  = -lm
+CPPFLAGS += -I/usr/include/X11
 
 # Rules
 all: $(NAME)
