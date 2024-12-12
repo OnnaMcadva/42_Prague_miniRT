@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 13:18:38 by nchonka           #+#    #+#             */
-/*   Updated: 2024/12/10 23:14:55 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/12 19:30:29 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- #include "../../incs/minirt.h"
+#include "../../incs/minirt.h"
 
 void	goodbye(char *s)
 {
