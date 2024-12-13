@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 17:58:22 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/12 21:19:45 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/13 23:27:58 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void	cam_touch_key(int key, t_rt *rt)
 		move_camera(rt, up);  
 	if (key == F_KEY)
 		move_camera(rt, down); 
-	if (key == Q_KEY)
-		rotate_camera(rt, left);
 	if (key == E_KEY)
+		rotate_camera(rt, left);
+	if (key == Q_KEY)
 		rotate_camera(rt, right);
 }
 

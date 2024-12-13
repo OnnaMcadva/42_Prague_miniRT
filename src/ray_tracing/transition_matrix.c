@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:46:46 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/13 22:33:13 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/13 23:30:26 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void create_camera_axes(t_rt *rt, t_vect *forward, t_vect *right, t_vect *up)
 {
     t_vect temp;
 
-    temp = vec_coord(0, 0, 1);
+    temp = vec_coord(0, 1, 0);
     *forward = rt->camera.orient;
     normalize(forward);
     if (fabs(forward->x) == 0 && fabs(forward->z) == 0)

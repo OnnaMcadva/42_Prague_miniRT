@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 21:49:12 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/10 22:46:33 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/13 23:35:57 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ void	move_light(t_rt *rt, enum moving dir)
 	t_light *light = rt->light;
 
 	if (dir == left)
-		light->coords.x -= MOVE_SPEED;
-	else if (dir == right)
 		light->coords.x += MOVE_SPEED;
+	else if (dir == right)
+		light->coords.x -= MOVE_SPEED;
 	else if (dir == up)
 		light->coords.y += MOVE_SPEED;
 	else if (dir == down)
