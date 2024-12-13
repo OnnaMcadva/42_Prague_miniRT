@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:10:53 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/12 12:25:54 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/12 22:50:29 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@ void	win_handle(t_rt *rt, char *path)
 	rt->mlx = mlx_init();
 	if (!rt->mlx)
     	exit(1);
-	if (!rt->width)
-		rt->width = (float) WIN_WIDTH;
-	if (!rt->height)
-		rt->height = (float) WIN_HEIGHT;
-	if (rt->height && (rt->height < rt->width))
+	if (rt->width <= 0 || rt->height <= 0)
+	{
+    	rt->width = (float) WIN_WIDTH;
+    	rt->height = (float) WIN_HEIGHT;
+	}
+	if (rt->height < rt->width)
 		rt->aspectratio = rt->width / rt->height;
 	else
 		rt->aspectratio = rt->height / rt->width;

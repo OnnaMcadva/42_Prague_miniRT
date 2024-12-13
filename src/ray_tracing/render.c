@@ -6,12 +6,13 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:11:39 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/12 00:34:02 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/12 22:56:21 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/minirt.h"
 
+/*Получает цвет пикселя изображения по заданным координатам xf и yf.*/
 t_color	get_pixelcolor(t_img *img, float xf, float yf)
 {
 	char	*dst;
@@ -29,6 +30,8 @@ t_color	get_pixelcolor(t_img *img, float xf, float yf)
 	return (newcolor(0, 0, 0));
 }
 
+/*Рендерит одну часть изображения (строку) с использованием 
+многозадачности (потоков), обновляя каждый пиксель в строке.*/
 void	*render_line_chunk(void *line_trd)
 {
 	float		x;
@@ -55,6 +58,8 @@ void	*render_line_chunk(void *line_trd)
 	return (NULL);
 }
 
+/*Запускает несколько потоков для параллельного рендеринга 
+изображения, деля работу по строкам.*/
 void	render_parallel(t_rt *rt)
 {
 	int			i;
@@ -74,6 +79,8 @@ void	render_parallel(t_rt *rt)
 		pthread_join(lines[i++].trd, NULL);
 }
 
+/*Вычисляет цвет пикселя с использованием антиалиасинга 
+или трассировки лучей, в зависимости от флагов.*/
 int	smart_rt(t_rt *rt, float x, float y)
 {
 	t_rays	r ;
@@ -86,6 +93,8 @@ int	smart_rt(t_rt *rt, float x, float y)
 	return (color_to_rgb(raytrace(rt, &r, MAX_REFLECT)));
 }
 
+/*Главная функция рендеринга, которая запускает 
+параллельный рендеринг и выводит результат в окно.*/
 void render(t_rt *rt)
 {
     if (rt->is_processing)
