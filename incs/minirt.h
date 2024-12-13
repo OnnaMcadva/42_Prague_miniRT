@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:23:56 by nchonka           #+#    #+#             */
-/*   Updated: 2024/12/12 21:19:32 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/13 17:06:24 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -260,7 +260,7 @@ t_color	light_to_rgb(t_obj *o, t_colors *colors);
 void	handle_lights(t_rt *rt, t_rays *r, t_colors *colors);
 t_color	raytrace(t_rt *rt, t_rays *r, int max_reflect);
 
-/* raycasting.c */
+/* ray_casting.c */
 void	build_ray(t_ray *ray, t_vect *or, t_vect *dir);
 void	cam_view_matrix(t_rt *rt);
 t_vect	cam_to_world(float m[4][4], t_vect *v);
@@ -287,6 +287,10 @@ void	uv_sphere_map(t_obj *obj, t_vect p, float *uv);
 void	uv_plane_map(t_obj *obj, t_vect p, float *uv);
 void	uv_cylco_map(t_obj *obj, t_vect p, float *uv);
 t_color	pattern_color(t_obj *obj, t_vect phit);
+
+/* transition_matrix.c */
+void cam_view_matrix(t_rt *rt);
+void create_camera_axes(t_rt *rt, t_vect *forward, t_vect *right, t_vect *up);
 
 /* minirt.c */
 void	hook_init(t_rt *rt);
