@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:22:21 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/11 23:16:21 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/14 21:50:32 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ void	uv_sphere_map(t_obj *obj, t_vect p, float *uv)
 	x = scal_product(obj->ex, v);
 	y = scal_product(obj->ey, v);
 	z = scal_product(obj->ez, v);
-	uv[0] = atan2(x, z) / (2 * M_PI) + 0.5;
+	//uv[0] = atan2(x, z) / (2 * M_PI) + 0.5;
+	uv[0] = 1.0 - (atan2(x, z) / (2 * M_PI) + 0.5);
 	uv[1] = y * 0.5 + 0.5;
 }
 
@@ -72,6 +73,7 @@ void	uv_cylco_map(t_obj *obj, t_vect p, float *uv)
 	x = scal_product(obj->ex, v);
 	z = scal_product(obj->ez, v);
 	uv[0] = atan2(x, z) / (2 * M_PI) + 0.5;
+	uv[0] = 1.0 - (atan2(x, z) / (2 * M_PI) + 0.5);
 	uv[1] = y / obj->h + 0.5;
 }
 

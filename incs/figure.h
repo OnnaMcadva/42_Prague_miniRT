@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 22:13:35 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/10 23:26:20 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/14 23:24:33 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,7 +166,6 @@ typedef union u_object
 	t_cylinder	cylinder;
 	t_cone		cone;
 	t_triangle	triangle;
-	//t_torus		torus;
 }	t_obj_union;
 
 typedef struct s_img

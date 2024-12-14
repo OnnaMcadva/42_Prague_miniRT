@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 17:58:22 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/13 23:27:58 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/14 23:38:23 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,6 @@ void	light_touch_key(int key, t_rt *rt)
 		change_light_brightness(rt, -0.1);
 }
 
-void restart_program(const char *arg) 
-{ 
-    char *args[] = {"./minirt", (char *)arg, NULL}; 
-	execv(args[0], args); 
-    perror("execv failed"); 
-    exit(1); 
-} 
-
 int	key_press(int key, t_rt *rt)
 {
 	if (key == ESC_KEY)
@@ -86,12 +78,18 @@ int	key_press(int key, t_rt *rt)
 		switch_var(&rt->img.antialiasing_on);
 		render(rt);
 	}
+	if (key == NP_1|| key == NP_2 || key == NP_3) 
+	{
+	    manage_fig(key, rt);
+	    rt->event.torender = TRUE;
+	    render(rt);
+	}
 	if (key == C_KEY)
 		printf ("%s", MERRY);
 	cam_touch_key(key, rt);
 	light_touch_key(key, rt);
 	if (key == X_KEY)
-		restart_program("scenes/elka.rt");
+		elka("scenes/elka.rt");
 	return (0);
 }
 

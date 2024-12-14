@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 18:04:58 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/10 21:50:31 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/14 23:13:32 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ void	move_camera(t_rt *rt, enum moving dir)
 
 	if (dir == left)
 	{
-    	rt->camera.coords.x -= right_vect.x * MOVE_SPEED;
-    	rt->camera.coords.z -= right_vect.z * MOVE_SPEED;
+    	rt->camera.coords.x += right_vect.x * MOVE_SPEED;
+    	rt->camera.coords.z += right_vect.z * MOVE_SPEED;
 	}
 	else if (dir == right)
 	{
-    	rt->camera.coords.x += right_vect.x * MOVE_SPEED;
-    	rt->camera.coords.z += right_vect.z * MOVE_SPEED;
+    	rt->camera.coords.x -= right_vect.x * MOVE_SPEED;
+    	rt->camera.coords.z -= right_vect.z * MOVE_SPEED;
 	}
 	else if (dir == up)
     	rt->camera.coords.y += MOVE_SPEED;

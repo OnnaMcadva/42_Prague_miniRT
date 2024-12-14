@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 12:56:19 by nchonka           #+#    #+#             */
-/*   Updated: 2024/12/11 23:50:36 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/14 23:49:07 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@
 
 # define MOVE_SPEED 0.5f
 # define ROTATE_SPEED 0.05f
+# define ROTATE_ANGLE 5.0
 # define LEFT_CLICK 1
 # define RIGHT_CLICK 2
 
@@ -108,6 +109,10 @@
 # define RIGHT_ARROW 65363
 # define UP_ARROW 65362
 # define DOWN_ARROW 65364
+
+# define NP_1       65436
+# define NP_2       65433
+# define NP_3       65435
 
 # define NP_7       65429
 # define NP_8       65431 

@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 12:10:31 by anmakaro          #+#    #+#             */
-/*   Updated: 2024/12/13 16:23:06 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/14 21:01:53 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	*ft_calloc(size_t count, size_t size)
 	ptr = calloc(count, size);
 	return (ptr);
 }
-
 
 /*
 void	*ft_calloc(size_t count, size_t size)

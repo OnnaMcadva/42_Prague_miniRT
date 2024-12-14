@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:23:56 by nchonka           #+#    #+#             */
-/*   Updated: 2024/12/13 17:06:24 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/14 23:34:48 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,11 @@ int		key_release(int key, t_rt *rt);
 void	change_light_brightness(t_rt *rt, float change);
 void	change_light_color(t_rt *rt, int r_change, int g_change, int b_change);
 void	move_light(t_rt *rt, enum moving dir);
+
+/* manage_fig.c */
+void elka(const char *arg);
+void manage_fig(int key, t_rt *rt);
+void rotate_vector(t_vect *vector, t_vect axis, float angle);
 
 /* mouse_moving.c */
 void	move_object(t_rt *rt, int x, int y);
