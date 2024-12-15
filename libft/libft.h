@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:34:17 by nchonka           #+#    #+#             */
-/*   Updated: 2024/12/08 23:20:22 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/15 21:37:22 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <string.h>
 # include "get_next_line.h"
 
 int	ft_atoi(const char *str);

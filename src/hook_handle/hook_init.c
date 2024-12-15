@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 17:58:22 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/14 23:38:23 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/15 15:22:31 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,7 @@ int	key_press(int key, t_rt *rt)
 		render(rt);
 	}
 	if (key == NP_1|| key == NP_2 || key == NP_3) 
-	{
 	    manage_fig(key, rt);
-	    rt->event.torender = TRUE;
-	    render(rt);
-	}
 	if (key == C_KEY)
 		printf ("%s", MERRY);
 	cam_touch_key(key, rt);

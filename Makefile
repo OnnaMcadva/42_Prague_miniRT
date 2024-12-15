@@ -6,7 +6,7 @@
 #    By: annavm <annavm@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 21:47:07 by annavm            #+#    #+#              #
-#    Updated: 2024/12/12 21:33:07 by annavm           ###   ########.fr        #
+#    Updated: 2024/12/15 22:39:21 by annavm           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -144,10 +144,10 @@ run:
 norm:
 	$(NORM) $(INC_DIR) $(SRCS_DIR) $(LIBFT_DIR)
 
-dev: CFLAGS += $(CDEBUG)
-dev: $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) $(LIBFT_FLAGS) $(MLX_FLAGS) -L $(LIBFT_DIR) -L $(MLX_DIR) -o $(NAME)
-	$(MAKE) run
+# dev: CFLAGS += $(CDEBUG)
+# dev: $(OBJS)
+# 	$(CC) $(OBJS) $(CFLAGS) $(LIBFT_FLAGS) $(MLX_FLAGS) -L $(LIBFT_DIR) -L $(MLX_DIR) -o $(NAME)
+# 	$(MAKE) run
 
 valgrind:
 	valgrind --leak-check=full ./$(NAME)

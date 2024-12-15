@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:11:10 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/12 12:37:08 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/15 16:17:16 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,35 +24,35 @@ void	draw_bar(t_rt *rt, int x, int y)
 	}
 }
 
-char	*format_progress(float percent)
-{
-	char	*tmp;
-	char	*tmp2;
+// char	*format_progress(float percent)
+// {
+// 	char	*tmp;
+// 	char	*tmp2;
 
-	tmp = ft_itoa(percent * 100);
-	tmp2 = ft_strjoin("Processing: ", tmp);
-	free(tmp);
-	tmp = ft_strjoin(tmp2, "%");
-	free(tmp2);
-	return (tmp);
-}
+// 	tmp = ft_itoa(percent * 100);
+// 	tmp2 = ft_strjoin("Processing: ", tmp);
+// 	free(tmp);
+// 	tmp = ft_strjoin(tmp2, "%");
+// 	free(tmp2);
+// 	return (tmp);
+// }
 
-void update_text(t_rt *rt, float perc)
-{
-    int x;
-    int y;
+// void update_text(t_rt *rt, float perc)
+// {
+//     int x;
+//     int y;
 
-    x = (rt->width * 0.5) - (PROGBAR_TEXT_W * 0.5);
-    y = (rt->height * 0.5) + (PROGBAR_TEXT_H * 2);
+//     x = (rt->width * 0.5) - (PROGBAR_TEXT_W * 0.5);
+//     y = (rt->height * 0.5) + (PROGBAR_TEXT_H * 2);
 
-    if (rt->process_text)
-    {
-        free(rt->process_text);
-        rt->process_text = NULL;
-    }
-    rt->process_text = format_progress(perc);
-    mlx_string_put(rt->mlx, rt->main_win, x, y, BLUE, rt->process_text);
-}
+//     if (rt->process_text)
+//     {
+//         free(rt->process_text);
+//         rt->process_text = NULL;
+//     }
+//     rt->process_text = format_progress(perc);
+//     mlx_string_put(rt->mlx, rt->main_win, x, y, BLUE, rt->process_text);
+// }
 
 void reset_process(t_rt *rt)
 {
@@ -85,7 +85,7 @@ void progress_update(t_rt *rt)
     if (rt->height > 100 && rt->width > PROGBAR_W)
     {
         draw_bar(rt, bar_x + ((PROGBAR_W * perc)), bar_y);
-        update_text(rt, perc);
+//        update_text(rt, perc);
     }
     
     reset_process(rt);
