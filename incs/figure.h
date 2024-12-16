@@ -6,14 +6,18 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 22:13:35 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/14 23:24:33 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 21:47:22 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIGURE_H
 # define FIGURE_H
 
-typedef enum e_bool {FALSE, TRUE}	t_bool;
+typedef enum e_bool
+{
+	FALSE,	
+	TRUE
+}	t_bool;
 
 typedef enum e_object_id
 {
@@ -188,6 +192,7 @@ typedef struct s_obj
 	t_obj_union		object;
 	float			speckv;
 	float			specn;
+	float			mirror;
 	float			refract;
 	t_vect			ex;
 	t_vect			ey;

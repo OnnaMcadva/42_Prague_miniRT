@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 12:56:19 by nchonka           #+#    #+#             */
-/*   Updated: 2024/12/14 23:49:07 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:12:46 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@
 # define NB_PARAMS_CONE 7
 # define NB_PARAMS_TRIANGLE 5
 
-# define PROGBAR_TEXT_W 90
-# define PROGBAR_TEXT_H 12
-# define PROGBAR_W 180
-# define PROGBAR_H 12
+# define PROGBAR_W 300
+# define PROGBAR_H 3
 # define MAX_THREADS 10
 # define FOCAL_DIST 0.5
 # define TEXTURE 1
@@ -43,6 +41,7 @@
 # define EPSILON 0.0001
 # define SPECULAR_KV 0.5
 # define SPECULAR_N 20
+# define MIRROR 0.0
 # define REFRACT 0.0
 # define PATTERN_LEN 0.0
 # define PATTERN_NUM 0
@@ -85,9 +84,7 @@
 # define ERR_FORBIDDEN_CHAR "contain forbidden character"
 # define ERR_MEM_ALLOC "Memory allocation error"
 # define IS_NAME "\033[0;92mPut:\n\n./minirt scenes/atom01.rt\n\n😸\n\033[0m"
-# define MERRY "\033[0;92m🎄 MERRY CHRISTMAS 🎄\n        ^\n       ^^^\n      ^^^^^\n" \
-            "     ^^^^^^^\n     ^^^^^^^\n    ^^^^^^^^^\n   ^^^^^^^^^^^\n" \
-            "       |||\n       |||\n\033[0m"
+# define MERRY "\033[0;92m\n\n🎄 MERRY CHRISTMAS 🎄\n\n\033[0m"
 
 # define ESC_KEY 65307
 # define L_KEY 108
