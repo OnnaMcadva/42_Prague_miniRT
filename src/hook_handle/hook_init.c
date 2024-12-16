@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 17:58:22 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/15 15:22:31 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:16:28 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 static void	switch_var(int *var)
 {
@@ -31,9 +31,9 @@ void	cam_touch_key(int key, t_rt *rt)
 	if (key == D_KEY)
 		move_camera(rt, right);
 	if (key == R_KEY)
-		move_camera(rt, up);  
+		move_camera(rt, up);
 	if (key == F_KEY)
-		move_camera(rt, down); 
+		move_camera(rt, down);
 	if (key == E_KEY)
 		rotate_camera(rt, left);
 	if (key == Q_KEY)
@@ -50,21 +50,21 @@ void	light_touch_key(int key, t_rt *rt)
 		move_light(rt, up);
 	if (key == DOWN_ARROW)
 		move_light(rt, down);
-	if (key == NP_7) // Увеличить красный компонент
+	if (key == NP_7)
 		change_light_color(rt, 10, 0, 0);
-	if (key == NP_8) // Увеличить зеленый компонент
+	if (key == NP_8)
 		change_light_color(rt, 0, 10, 0);
-	if (key == NP_9) // Увеличить синий компонент
+	if (key == NP_9)
 		change_light_color(rt, 0, 0, 10);
-	if (key == NP_4) // Уменьшить красный компонент
+	if (key == NP_4)
 		change_light_color(rt, -10, 0, 0);
-	if (key == NP_5) // Уменьшить зеленый компонент
+	if (key == NP_5)
 		change_light_color(rt, 0, -10, 0);
-	if (key == NP_6) // Уменьшить синий компонент
+	if (key == NP_6)
 		change_light_color(rt, 0, 0, -10);
-	if (key == PLUS_KEY) // Увеличить яркость
+	if (key == PLUS_KEY)
 		change_light_brightness(rt, 0.1);
-	if (key == MINUS_KEY) // Уменьшить яркость
+	if (key == MINUS_KEY)
 		change_light_brightness(rt, -0.1);
 }
 
@@ -78,8 +78,8 @@ int	key_press(int key, t_rt *rt)
 		switch_var(&rt->img.antialiasing_on);
 		render(rt);
 	}
-	if (key == NP_1|| key == NP_2 || key == NP_3) 
-	    manage_fig(key, rt);
+	if (key == NP_1 || key == NP_2 || key == NP_3)
+		manage_fig(key, rt);
 	if (key == C_KEY)
 		printf ("%s", MERRY);
 	cam_touch_key(key, rt);

@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 22:40:28 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/10 14:44:25 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:17:22 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 int	is_invalid_file(t_rt *rt)
 {
@@ -72,10 +72,9 @@ int	open_file(t_rt *rt, char *path)
 		return (!print_err(ERR_FILE_NOT_FOUND));
 	if (read_file(rt, fd))
 	{
-		close(fd); // Закриваємо файл у разі помилки читання
+		close(fd);
 		return (0);
 	}
-	close(fd); // Успішне завершення: файл закрито
+	close(fd);
 	return (1);
 }
-

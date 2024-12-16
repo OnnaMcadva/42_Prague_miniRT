@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:06:15 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/11 23:09:29 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:16:10 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 t_vect	*get_coords(t_obj *o)
 {
@@ -50,6 +50,7 @@ t_obj	*create_object(t_rt *rt, t_obj_id id)
 	obj->id = id;
 	obj->speckv = SPECULAR_KV;
 	obj->specn = SPECULAR_N;
+	obj->mirror = MIRROR;
 	obj->refract = REFRACT;
 	obj->pattern_len = PATTERN_LEN;
 	obj->pattern_num = PATTERN_NUM;

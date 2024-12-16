@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:06:38 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/08 19:38:44 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:16:17 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 int	is_float(char *str)
 {

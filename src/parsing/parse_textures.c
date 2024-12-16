@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:23:41 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/15 16:11:14 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:25:49 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 int	is_invalid_xpmfile(char *path)
 {
@@ -33,11 +33,18 @@ int	parse_texture(char *param, t_obj *obj)
 
 	params = ft_split(param, ',');
 	if (array_length(params) == 2 && parse_float(params[1], &obj->texture_f))
+	{
+		free(params);
 		return (1);
+	}
 	if (is_invalid_xpmfile(params[0]))
+	{
+		free(params);
 		return (1);
+	}
 	obj->texture.path = params[0];
 	obj->has_texture = TRUE;
+	free(params);
 	return (0);
 }
 

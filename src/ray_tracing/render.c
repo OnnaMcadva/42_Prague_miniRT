@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:11:39 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/12 22:56:21 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:55:49 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 /*Получает цвет пикселя изображения по заданным координатам xf и yf.*/
 t_color	get_pixelcolor(t_img *img, float xf, float yf)
@@ -63,7 +63,7 @@ void	*render_line_chunk(void *line_trd)
 void	render_parallel(t_rt *rt)
 {
 	int			i;
-	t_line_trd	lines[MAX_THREADS] = {0};
+	t_line_trd	lines[MAX_THREADS];
 
 	i = 0;
 	object_norm(rt);
@@ -95,16 +95,12 @@ int	smart_rt(t_rt *rt, float x, float y)
 
 /*Главная функция рендеринга, которая запускает 
 параллельный рендеринг и выводит результат в окно.*/
-void render(t_rt *rt)
+void	render(t_rt *rt)
 {
-    if (rt->is_processing)
-        return ;
-
-    rt->is_processing = TRUE;
-
-    render_parallel(rt);
-
-    mlx_put_image_to_window(rt->mlx, rt->main_win, rt->img.img, 0, 0);
-
-    rt->is_processing = FALSE;
+	if (rt->is_processing)
+		return ;
+	rt->is_processing = TRUE;
+	render_parallel(rt);
+	mlx_put_image_to_window(rt->mlx, rt->main_win, rt->img.img, 0, 0);
+	rt->is_processing = FALSE;
 }

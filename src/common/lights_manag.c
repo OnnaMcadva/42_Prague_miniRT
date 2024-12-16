@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:06:46 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/11 23:09:22 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:16:04 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 void	add_light_to_list(t_light *new_light, t_light **lights)
 {

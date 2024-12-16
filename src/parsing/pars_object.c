@@ -6,16 +6,16 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 13:39:17 by nchonka           #+#    #+#             */
-/*   Updated: 2024/12/11 23:12:01 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:20:08 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 int	parse_plane(t_rt *rt, char **params, t_obj *obj)
 {
 	int		i;
-	t_plane	plane = {0};
+	t_plane	plane;
 
 	i = 0;
 	ft_bzero(&plane, sizeof(t_plane));
@@ -38,7 +38,7 @@ int	parse_plane(t_rt *rt, char **params, t_obj *obj)
 int	parse_sphere(t_rt *rt, char **params, t_obj *obj)
 {
 	int			i;
-	t_sphere	sphere = {0};
+	t_sphere	sphere;
 
 	i = 0;
 	ft_bzero(&sphere, sizeof(t_sphere));
@@ -60,7 +60,7 @@ int	parse_sphere(t_rt *rt, char **params, t_obj *obj)
 int	parse_cylinder(t_rt *rt, char **params, t_obj *obj)
 {
 	int			i;
-	t_cylinder	cylinder = {0};
+	t_cylinder	cylinder;
 
 	i = 0;
 	ft_bzero(&cylinder, sizeof(t_cylinder));
@@ -77,7 +77,7 @@ int	parse_cylinder(t_rt *rt, char **params, t_obj *obj)
 			return (print_parse_err(rt, params, NOT_A_FLOAT));
 		if (i == 5 && parse_colors(params[i], &obj->color, &obj->color2))
 			return (print_parse_err(rt, params, INVALID_NB_COLORS));
-	}	
+	}
 	normalize(&cylinder.orient);
 	cylinder.coords = obj->coords;
 	obj->object.cylinder = cylinder;
@@ -87,7 +87,7 @@ int	parse_cylinder(t_rt *rt, char **params, t_obj *obj)
 int	parse_cone(t_rt *rt, char **params, t_obj *obj)
 {
 	int		i;
-	t_cone	cone = {0};
+	t_cone	cone;
 
 	i = 0;
 	ft_bzero(&cone, sizeof(t_cone));
@@ -116,7 +116,7 @@ int	parse_cone(t_rt *rt, char **params, t_obj *obj)
 int	parse_triangle(t_rt *rt, char **params, t_obj *obj)
 {
 	int			i;
-	t_triangle	triangle = {0};
+	t_triangle	triangle;
 
 	i = 0;
 	ft_bzero(&triangle, sizeof(t_triangle));
@@ -131,7 +131,7 @@ int	parse_triangle(t_rt *rt, char **params, t_obj *obj)
 			return (print_parse_err(rt, params, INVALID_NB_COORDS));
 		if (i == 4 && parse_colors(params[i], &obj->color, &obj->color2))
 			return (print_parse_err(rt, params, INVALID_NB_COLORS));
-	}	
+	}
 	triangle.color = obj->color;
 	obj->object.triangle = triangle;
 	return (0);

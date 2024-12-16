@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:23:55 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/10 23:37:20 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:20:30 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 int	parse_vector(char *str, t_vect *vect)
 {

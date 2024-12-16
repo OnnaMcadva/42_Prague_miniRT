@@ -6,46 +6,38 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:22:40 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/12 12:37:50 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:50:55 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
-t_bool sphere_inter(t_ray *ray, t_sphere *sp, t_hit *hit)
+t_bool	sphere_inter(t_ray *ray, t_sphere *sp, t_hit *hit)
 {
-    t_vect l;
-    float tca;
-    float d2;
-    float thc;
-    float t2;
+	t_vect	l;
+	float	tca;
+	float	d2;
+	float	thc;
+	float	t2;
 
-    l = vec_difference(ray->or, sp->coords);
-    tca = scal_product(l, ray->dir);
-
-    if (tca < 0)
-        return (FALSE);
-    
-    d2 = scal_product(l, l) - tca * tca;
-    if (d2 > sp->r2)
-        return (FALSE);
-
-    thc = sqrt(sp->r2 - d2);
-    hit->t = tca - thc;
-    t2 = tca + thc;
-
-    if (hit->t < EPSILON && t2 < EPSILON)
-        return (FALSE);
-
-    if (hit->t < EPSILON || t2 < hit->t)
-        hit->t = t2;
-
-    calc_ray_point(&hit->phit, ray, hit->t);
-
-    hit->nhit = vec_difference(sp->coords, hit->phit);
-    normalize(&hit->nhit);
-
-    return (TRUE);
+	l = vec_difference(ray->or, sp->coords);
+	tca = scal_product(l, ray->dir);
+	if (tca < 0)
+		return (FALSE);
+	d2 = scal_product(l, l) - tca * tca;
+	if (d2 > sp->r2)
+		return (FALSE);
+	thc = sqrt(sp->r2 - d2);
+	hit->t = tca - thc;
+	t2 = tca + thc;
+	if (hit->t < EPSILON && t2 < EPSILON)
+		return (FALSE);
+	if (hit->t < EPSILON || t2 < hit->t)
+		hit->t = t2;
+	calc_ray_point(&hit->phit, ray, hit->t);
+	hit->nhit = vec_difference(sp->coords, hit->phit);
+	normalize(&hit->nhit);
+	return (TRUE);
 }
 
 t_bool	plane_inter(t_ray *r, t_plane *pl, t_hit *hit)
@@ -125,7 +117,7 @@ t_bool	infinite_cyl_inter(t_ray *r, t_cylinder *cy, t_hit *hit)
 t_bool	cylinder_inter(t_ray *r, t_cylinder *cy, t_hit *hit)
 {
 	t_plane	pl;
-	t_hit	tmp_hit = {0};
+	t_hit	tmp_hit;
 
 	hit->t = INFINITY;
 	pl.coords = cy->p1;

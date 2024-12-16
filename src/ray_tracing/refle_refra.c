@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:22:29 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/11 23:15:46 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:21:17 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 t_color	specular_light(t_rays *r, t_light *light)
 {

@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:11:33 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/11 23:12:26 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:30:43 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 int	anti_aliasing(t_rt *rt, float x, float y)
 {

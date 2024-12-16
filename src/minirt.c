@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 22:08:13 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/14 22:21:15 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:21:46 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/minirt.h"
+#include <minirt.h>
 
 static int	handle_no_event(t_rt *rt)
 {
@@ -57,14 +57,13 @@ int	scene_name(const char *s)
 
 int	main(int argc, char **argv)
 {
-    t_rt *rt;
+	t_rt	*rt;
 
 	if (argc != 2 || !scene_name(argv[1]))
 		goodbye(IS_NAME);
 	rt = ft_calloc(sizeof(t_rt), 1);
 	if (!rt)
 		goodbye(ERR_MEM_ALLOC);
-
 	if (open_file(rt, argv[1]))
 	{
 		win_handle(rt, argv[1]);

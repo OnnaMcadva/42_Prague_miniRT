@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:09:27 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/08 19:34:03 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:16:14 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 float	str_to_float(char *str)
 {

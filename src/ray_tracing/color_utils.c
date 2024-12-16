@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:22:54 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/11 23:12:59 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:41:27 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 t_color	newcolor(float r, float g, float b)
 {
@@ -50,5 +50,8 @@ t_color	rgb_to_color(int rgb)
 
 int	color_to_rgb(t_color c)
 {
-	return ((int)(c.r * 255) << 16) | ((int)(c.g * 255) << 8) | (int)(c.b * 255);
+	return (((int)(c.r * 255) << 16)
+	| ((int)(c.g * 255) << 8)
+	| ((int)(c.b * 255))
+);
 }

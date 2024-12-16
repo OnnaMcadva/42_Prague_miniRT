@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:15:40 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/11 23:23:24 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:44:40 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 t_bool	cone_hit(t_ray *r, t_cone *co, t_hit *hit)
 {
@@ -33,68 +33,38 @@ t_bool	cone_hit(t_ray *r, t_cone *co, t_hit *hit)
 	hit->t = q.t1;
 	calc_ray_point(&hit->phit, r, hit->t);
 	cp = vec_difference(co->coords, hit->phit);
-	if (scal_product(co->orient, cp) > co->h || scal_product(co->orient, cp) < -co->h2)
+	if (scal_product(co->orient, cp) > co->h
+		|| scal_product(co->orient, cp) < -co->h2)
 		return (FALSE);
 	hit->nhit = vec_product(vec_product(cp, co->orient), cp);
 	normalize(&hit->nhit);
 	return (TRUE);
 }
 
-t_bool cone_test(t_ray *r, t_cone *co, t_hit *hit)
+t_bool	cone_test(t_ray *r, t_cone *co, t_hit *hit)
 {
-    t_plane pl;
-    t_hit tmp_hit = {0};  // tmp_hit инициализирована значениями по умолчанию
+	t_plane	pl;
+	t_hit	tmp_hit;
 
-    hit->t = INFINITY;  // Инициализация t в hit
-    hit->nhit.x = 0;    // Явная инициализация компонента x
-    hit->nhit.y = 0;    // Явная инициализация компонента y
-    hit->nhit.z = 0;    // Явная инициализация компонента z
-    
-    pl.coords = co->c1;
-    pl.orient = co->orient;
-    
-    if (plane_inter(r, &pl, &tmp_hit)
-        && distance(tmp_hit.phit, co->c1) <= co->r1 && hit->t > tmp_hit.t)
-        *hit = tmp_hit;
-    
-    pl.coords = co->c2;
-    if (plane_inter(r, &pl, &tmp_hit)
-        && distance(tmp_hit.phit, co->c2) <= co->r2 && hit->t > tmp_hit.t)
-        *hit = tmp_hit;
-    
-    if (cone_hit(r, co, &tmp_hit) && hit->t > tmp_hit.t)
-        *hit = tmp_hit;
-    
-    if (scal_product(hit->nhit, r->dir) > 0)
-        hit->nhit = vec_oppos(hit->nhit);
-    
-    return (hit->t < INFINITY && hit->t > EPSILON);
+	hit->t = INFINITY;
+	hit->nhit.x = 0;
+	hit->nhit.y = 0;
+	hit->nhit.z = 0;
+	pl.coords = co->c1;
+	pl.orient = co->orient;
+	if (plane_inter(r, &pl, &tmp_hit)
+		&& distance(tmp_hit.phit, co->c1) <= co->r1 && hit->t > tmp_hit.t)
+		*hit = tmp_hit;
+	pl.coords = co->c2;
+	if (plane_inter(r, &pl, &tmp_hit)
+		&& distance(tmp_hit.phit, co->c2) <= co->r2 && hit->t > tmp_hit.t)
+		*hit = tmp_hit;
+	if (cone_hit(r, co, &tmp_hit) && hit->t > tmp_hit.t)
+		*hit = tmp_hit;
+	if (scal_product(hit->nhit, r->dir) > 0)
+		hit->nhit = vec_oppos(hit->nhit);
+	return (hit->t < INFINITY && hit->t > EPSILON);
 }
-
-
-// t_bool	cone_test(t_ray *r, t_cone *co, t_hit *hit)
-// {
-// 	t_plane	pl;
-// 	t_hit	tmp_hit = {0};
-
-// 	hit->t = INFINITY;
-// 	pl.coords = co->c1;
-// 	pl.orient = co->orient;
-// 	if (plane_inter(r, &pl, &tmp_hit)
-// 		&& distance(tmp_hit.phit, co->c1)
-// 		<= co->r1 && hit->t > tmp_hit.t)
-// 		*hit = tmp_hit;
-// 	pl.coords = co->c2;
-// 	if (plane_inter(r, &pl, &tmp_hit)
-// 		&& distance(tmp_hit.phit, co->c2)
-// 		<= co->r2 && hit->t > tmp_hit.t)
-// 		*hit = tmp_hit;
-// 	if (cone_hit(r, co, &tmp_hit) && hit->t > tmp_hit.t)
-// 		*hit = tmp_hit;
-// 	if (scal_product(hit->nhit, r->dir) > 0)
-// 		hit->nhit = vec_oppos(hit->nhit);
-// 	return (hit->t < INFINITY && hit->t > EPSILON);
-// }
 
 int	intersect(t_ray *ray, t_obj *obj, t_hit *hit)
 {

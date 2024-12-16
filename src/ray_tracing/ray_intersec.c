@@ -6,17 +6,17 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:22:00 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/11 23:36:36 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:54:35 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 t_obj	*get_closest_obj(t_ray *ray, t_obj *obj, t_hit *hit)
 {
 	float	min_dist;
 	t_obj	*closest_obj;
-	t_hit	tmp_hit = {0};
+	t_hit	tmp_hit;
 
 	closest_obj = NULL;
 	min_dist = INFINITY;
@@ -45,6 +45,8 @@ t_color	light_to_rgb(t_obj *o, t_colors *colors)
 	c.r = colors->ambient.r + colors->diffuse.r + colors->specular.r;
 	c.g = colors->ambient.g + colors->diffuse.g + colors->specular.g;
 	c.b = colors->ambient.b + colors->diffuse.b + colors->specular.b;
+	if (o && o->mirror > 0)
+		c = blend_colors(c, 1 - o->mirror, colors->reflect, o->mirror);
 	if (o && o->refract > 0)
 		c = blend_colors(colors->refract, 0.7, c, 0.3);
 	if (c.r > 1)
@@ -89,6 +91,8 @@ t_color	raytrace(t_rt *rt, t_rays *r, int max_reflect)
 		return (newcolor(0, 0, 0));
 	handle_lights(rt, r, &colors);
 	--max_reflect;
+	if (r->closest_obj->mirror > 0 && max_reflect)
+		colors.reflect = reflection_ray(rt, r, max_reflect);
 	if (r->closest_obj->refract > 0 && max_reflect)
 		colors.refract = refraction_ray(rt, r, max_reflect);
 	if (max_reflect < 0)

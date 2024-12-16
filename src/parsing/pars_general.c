@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 18:22:12 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/11 23:11:36 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:18:05 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 int	parse_camera(t_rt *rt, char *line, int i)
 {

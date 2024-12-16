@@ -6,11 +6,11 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 13:18:38 by nchonka           #+#    #+#             */
-/*   Updated: 2024/12/12 19:30:29 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/16 23:15:34 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/minirt.h"
+#include <minirt.h>
 
 void	goodbye(char *s)
 {
@@ -28,7 +28,6 @@ int	print_parse_err(t_rt *rt, char **arr, char *msg)
 		printf(" [line: %d :param: %d]\n", rt->lnum, (rt->pnum + 1));
 	else
 		printf("\n");
-
 	free_array(arr);
 	return (1);
 }
