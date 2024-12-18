@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 17:58:22 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/16 23:16:28 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/17 23:26:07 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	key_press(int key, t_rt *rt)
 	cam_touch_key(key, rt);
 	light_touch_key(key, rt);
 	if (key == X_KEY)
-		elka("scenes/elka.rt");
+		elka("scenes/bonus.rt");
 	return (0);
 }
 

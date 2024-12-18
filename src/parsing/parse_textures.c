@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:23:41 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/16 23:25:49 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/18 23:22:17 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ int	parse_texture(char *param, t_obj *obj)
 	}
 	obj->texture.path = params[0];
 	obj->has_texture = TRUE;
-	free(params);
+	obj->texture.path = ft_strdup(params[0]);
+	free_array(params);
 	return (0);
 }
 

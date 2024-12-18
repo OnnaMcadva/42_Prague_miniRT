@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:06:24 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/14 21:47:36 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/18 03:13:11 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,9 @@ void	triangle_norm(t_rt *rt, t_triangle *t)
 	v = vec_difference(rt->camera.orient, t->c[0]);
 	if (scal_product(v, t->n) > 0)
 	{
-		// Переворот нормалей
 		tmp = t->c[1];
 		t->c[1] = t->c[2];
 		t->c[2] = tmp;
-		// Повторный расчет нормали после переворота
 		t->n = vec_product(t->edge[0], t->edge[1]);
 		normalize(&t->n);
 	}

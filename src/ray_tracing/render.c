@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:11:39 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/16 23:55:49 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/18 17:36:52 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,20 @@ t_color	get_pixelcolor(t_img *img, float xf, float yf)
 		return (rgb_to_color(*(unsigned int *)dst));
 	}
 	return (newcolor(0, 0, 0));
+}
+
+/*Вычисляет цвет пикселя с использованием антиалиасинга 
+или трассировки лучей, в зависимости от флагов.*/
+int	smart_rt(t_rt *rt, float x, float y)
+{
+	t_rays	r ;
+
+	if (rt->img.antialiasing_on && !rt->event.mouse)
+		return (anti_aliasing(rt, x, y));
+	create_camera_ray(rt, &r.prime_ray, x, y);
+	if (rt->event.mouse)
+		return (color_to_rgb(raytrace(rt, &r, 0)));
+	return (color_to_rgb(raytrace(rt, &r, MAX_REFLECT)));
 }
 
 /*Рендерит одну часть изображения (строку) с использованием 
@@ -77,20 +91,6 @@ void	render_parallel(t_rt *rt)
 	i = 0;
 	while (i < MAX_THREADS)
 		pthread_join(lines[i++].trd, NULL);
-}
-
-/*Вычисляет цвет пикселя с использованием антиалиасинга 
-или трассировки лучей, в зависимости от флагов.*/
-int	smart_rt(t_rt *rt, float x, float y)
-{
-	t_rays	r ;
-
-	if (rt->img.antialiasing_on && !rt->event.mouse)
-		return (anti_aliasing(rt, x, y));
-	create_camera_ray(rt, &r.prime_ray, x, y);
-	if (rt->event.mouse)
-		return (color_to_rgb(raytrace(rt, &r, 0)));
-	return (color_to_rgb(raytrace(rt, &r, MAX_REFLECT)));
 }
 
 /*Главная функция рендеринга, которая запускает 

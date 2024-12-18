@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:23:41 by annavm            #+#    #+#             */
-/*   Updated: 2024/12/16 23:16:01 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/18 22:38:54 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,7 @@ void	rt_free(t_rt *rt)
 			while (obj)
 			{
 				if (obj->has_texture)
-				{
 					free(obj->texture.path);
-					obj->has_texture = FALSE;
-				}
 				obj = obj->next;
 			}
 			free_objects(rt, &rt->objs);
@@ -68,35 +65,6 @@ void	rt_free(t_rt *rt)
 		free(rt);
 	}
 }
-
-/*
-void	rt_free(t_rt *rt)
-{
-	t_obj	*obj;
-
-	if (rt)
-	{
-		if (rt->light)
-			free_lights(&rt->light);
-		if (rt->objs)
-		{
-			obj = rt->objs;
-			while (obj)
-			{
-				if (obj->has_texture)
-				{
-					//obj->texture.img = NULL;
-					//obj->has_texture = FALSE;
-					free(obj->texture.path);
-				}
-				obj = obj->next;
-			}
-			free_objects(rt, &rt->objs);
-		}
-		free(rt);
-	}
-}
-*/
 
 void	free_array(char *arr[])
 {
