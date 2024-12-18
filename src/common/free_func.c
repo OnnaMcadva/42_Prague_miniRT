@@ -69,6 +69,35 @@ void	rt_free(t_rt *rt)
 	}
 }
 
+/*
+	void	rt_free(t_rt *rt)
+{
+	t_obj	*obj;
+
+	if (rt)
+	{
+		if (rt->light)
+			free_lights(&rt->light);
+		if (rt->objs)
+		{
+			obj = rt->objs;
+			while (obj)
+			{
+				if (obj->has_texture)
+				{
+					//obj->texture.img = NULL;
+					//obj->has_texture = FALSE;
+					free(obj->texture.path);
+				}
+				obj = obj->next;
+			}
+			free_objects(rt, &rt->objs);
+		}
+		free(rt);
+	}
+}
+*/
+
 void	free_array(char *arr[])
 {
 	int	i;
