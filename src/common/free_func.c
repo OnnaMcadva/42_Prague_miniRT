@@ -70,7 +70,7 @@ void	rt_free(t_rt *rt)
 }
 
 /*
-	void	rt_free(t_rt *rt)
+void	rt_free(t_rt *rt)
 {
 	t_obj	*obj;
 
