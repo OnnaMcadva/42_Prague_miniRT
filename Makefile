@@ -6,7 +6,7 @@
 #    By: annavm <annavm@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 21:47:07 by annavm            #+#    #+#              #
-#    Updated: 2024/12/16 23:44:48 by annavm           ###   ########.fr        #
+#    Updated: 2024/12/18 23:17:31 by annavm           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ NAME = miniRT
 UNAME = $(shell uname -s)
 INC_DIR     = incs
 CC = @gcc
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address 
+CFLAGS = -Wall -Wextra -Werror -g #-fsanitize=address 
 HEADERS = $(wildcard incs/*.h)
 MLX_DIR = ./minilibx-linux
 MLX_LIB = $(MLX_DIR)/libmlx.a

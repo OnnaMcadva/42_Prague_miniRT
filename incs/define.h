@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 12:56:19 by nchonka           #+#    #+#             */
-/*   Updated: 2024/12/16 23:12:46 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/18 17:45:14 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,10 @@
 # define INVALID_LIGHTING "\nERR_INVALID_LIGHTING😸\n"
 
 # define ERR_FILE_NOT_FOUND "file not found"
-# define ERR_IS_NOT_RT_FILE "isn't a rt file"
+//# define ERR_IS_NOT_RT_FILE "isn't a rt file"
 # define ERR_FORBIDDEN_CHAR "contain forbidden character"
 # define ERR_MEM_ALLOC "Memory allocation error"
-# define IS_NAME "\033[0;92mPut:\n\n./minirt scenes/atom01.rt\n\n😸\n\033[0m"
+# define IS_NAME "\033[0;92mPut:\n\n./minirt scenes/manda.rt\n\n😸\n\033[0m"
 # define MERRY "\033[0;92m\n\n🎄 MERRY CHRISTMAS 🎄\n\n\033[0m"
 
 # define ESC_KEY 65307

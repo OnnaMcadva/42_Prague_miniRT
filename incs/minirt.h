@@ -6,7 +6,7 @@
 /*   By: annavm <annavm@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:23:56 by nchonka           #+#    #+#             */
-/*   Updated: 2024/12/16 22:23:06 by annavm           ###   ########.fr       */
+/*   Updated: 2024/12/18 00:25:23 by annavm           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ int		print_parse_err(t_rt *rt, char **arr, char *msg);
 int		exit_win(t_rt *rt);
 
 /* free_func.c */
-void	free_texture(t_img *texture);
 void	rt_free(t_rt *rt);
 void	free_lights(t_light **lights);
 void	free_objects(t_rt *rt, t_obj **objs);
