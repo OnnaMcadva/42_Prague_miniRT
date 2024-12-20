@@ -13,7 +13,6 @@
 #ifndef DEFINE_H
 # define DEFINE_H
 
-# define M_PI 3.14159265358979323846
 # define MAX_KEY 65535
 # define MAX_REFLECT 5
 # define COLORDEF 0x81A1C1
