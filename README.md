@@ -16,5 +16,7 @@ will never be afraid of implementing mathematical formulas again
 ![изображение](https://github.com/user-attachments/assets/9c69071c-e9e8-4ed7-bac7-ff0b3f993b63)
 
 
+![Screenshot from 2024-12-26 00-07-40](https://github.com/user-attachments/assets/2de1bd8d-1336-4049-bb21-e0477f7cabaa)
+
 
 https://snipp.ru/handbk/html-colors
