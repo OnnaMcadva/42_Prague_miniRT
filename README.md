@@ -20,3 +20,6 @@ will never be afraid of implementing mathematical formulas again
 
 
 https://snipp.ru/handbk/html-colors
+
+
+https://www.youtube.com/watch?v=e1xrz9wNpB8
