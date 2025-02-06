@@ -23,3 +23,10 @@ https://snipp.ru/handbk/html-colors
 
 
 https://www.youtube.com/watch?v=e1xrz9wNpB8
+
+
+https://medium.com/@ridwaneelfilali/luxmancer-mastering-light-and-shadow-minirt-part-1-3aeced5d91ce
+
+
+https://habr.com/ru/articles/444516/
+
